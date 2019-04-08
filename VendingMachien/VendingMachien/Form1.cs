@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VendingMachien
 {
-    public partial class Form1 : Form
+    public partial class FormVendingMachine : Form
     {
-        public Form1()
+        public FormVendingMachine()
         {
             InitializeComponent();
         }

@@ -15,6 +15,9 @@ namespace VendingMachien
         public FormVendingMachine()
         {
             InitializeComponent();
+
         }
+
+        Product snickers = new Product("Snickers", 1.20, 30, true);
     }
 }

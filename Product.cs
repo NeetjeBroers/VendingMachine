@@ -8,17 +8,17 @@ namespace VendingMachien
 {
     class Product
     {
-        private string name;
-        private int price;
-        private int stock;
-        private int productsSold = 0;
-        private bool available;
+        private string Name;
+        private int Price;
+        private int Stock;
+        private int ProductsSold = 0;
+        private bool Available;
         public Product(string name, int price, int stock, bool available)
         {
-            this.name = name;
-            this.price = price;
-            this.stock = stock;
-            this.available = available;
+            this.Name = name;
+            this.Price = price;
+            this.Stock = stock;
+            this.Available = available;
         }
     }
 }

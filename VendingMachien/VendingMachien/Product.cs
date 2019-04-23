@@ -9,11 +9,11 @@ namespace VendingMachien
     class Product
     {
         private string name;
-        private double price;
+        private int price;
         private int stock;
         private int productsSold = 0;
         private bool available;
-        public Product(string name, double price, int stock, bool available)
+        public Product(string name, int price, int stock, bool available)
         {
             this.name = name;
             this.price = price;

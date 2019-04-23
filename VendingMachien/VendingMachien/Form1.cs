@@ -28,5 +28,9 @@ namespace VendingMachien
 
         }
 
+        private void FormVendingMachine_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

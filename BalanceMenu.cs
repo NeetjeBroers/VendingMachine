@@ -19,8 +19,14 @@ namespace VendingMachien
 
         private void button_click(object sender, EventArgs e)
         {
+            if (labelCurrentBalanceValue.Text == "0")
+            {
+                labelCurrentBalanceValue.Text = "";
+            }
             Button button = (Button)sender;
             labelCurrentBalanceValue.Text = labelCurrentBalanceValue.Text + button.Text;
+
+            
         }
     }
 }

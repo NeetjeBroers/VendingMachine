@@ -31,6 +31,7 @@
             this.buttonRefundBalance = new System.Windows.Forms.Button();
             this.labelCurrentBalance = new System.Windows.Forms.Label();
             this.labelCurrentBalanceValue = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonRefundBalance
@@ -62,11 +63,19 @@
             this.labelCurrentBalanceValue.TabIndex = 3;
             this.labelCurrentBalanceValue.Text = "0";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(346, 524);
+            this.panel1.TabIndex = 4;
+            // 
             // BalanceMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 545);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelCurrentBalanceValue);
             this.Controls.Add(this.labelCurrentBalance);
             this.Controls.Add(this.buttonRefundBalance);
@@ -81,5 +90,6 @@
         private System.Windows.Forms.Button buttonRefundBalance;
         private System.Windows.Forms.Label labelCurrentBalance;
         private System.Windows.Forms.Label labelCurrentBalanceValue;
+        private System.Windows.Forms.Panel panel1;
     }
 }

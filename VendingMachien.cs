@@ -17,11 +17,11 @@ namespace VendingMachien
         public FormVendingMachine()
         {
             InitializeComponent();
-                 Product snickers = new Product("Snickers", 120, 30, true);
-                Coins Euro = new Coins("1 Euro", 100);
+            Product snickers = new Product("Snickers", 120, 30, true);
+            Coins Euro = new Coins("1 Euro", 100);
 
-            Input =- Price;
-            decimal a = 80/20;
+            Input = -Price;
+            decimal a = 80 / 20;
             Math.Floor(a);
 
             label1.Text = a.ToString();
@@ -31,6 +31,11 @@ namespace VendingMachien
         private void FormVendingMachine_Load(object sender, EventArgs e)
         {
 
+        }
+        private void ButtonAddBalance_Click(object sender, EventArgs e)
+        {
+            BalanceMenu balanceMenu = new BalanceMenu();
+            balanceMenu.Show();
         }
     }
 }

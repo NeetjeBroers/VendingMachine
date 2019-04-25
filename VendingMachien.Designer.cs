@@ -32,15 +32,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAddBalance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1071, 343);
+            this.label1.Location = new System.Drawing.Point(714, 223);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 1;
             // 
             // button1
@@ -50,9 +52,10 @@
             this.button1.BackColor = System.Drawing.Color.Khaki;
             this.button1.FlatAppearance.BorderSize = 4;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1215, 392);
+            this.button1.Location = new System.Drawing.Point(810, 255);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 185);
+            this.button1.Size = new System.Drawing.Size(14, 120);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -61,30 +64,45 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1058, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(705, 8);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(324, 374);
+            this.dataGridView1.Size = new System.Drawing.Size(216, 243);
             this.dataGridView1.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 565);
+            this.panel1.Size = new System.Drawing.Size(693, 367);
             this.panel1.TabIndex = 4;
+            // 
+            // buttonAddBalance
+            // 
+            this.buttonAddBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonAddBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.buttonAddBalance.Location = new System.Drawing.Point(738, 444);
+            this.buttonAddBalance.Name = "buttonAddBalance";
+            this.buttonAddBalance.Size = new System.Drawing.Size(151, 67);
+            this.buttonAddBalance.TabIndex = 5;
+            this.buttonAddBalance.Text = "Add Balance";
+            this.buttonAddBalance.UseVisualStyleBackColor = false;
+            this.buttonAddBalance.Click += new System.EventHandler(this.ButtonAddBalance_Click);
             // 
             // FormVendingMachine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
-            this.ClientSize = new System.Drawing.Size(1394, 804);
+            this.ClientSize = new System.Drawing.Size(929, 523);
+            this.Controls.Add(this.buttonAddBalance);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormVendingMachine";
             this.Text = "Vending Machine";
             this.Load += new System.EventHandler(this.FormVendingMachine_Load);
@@ -99,6 +117,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonAddBalance;
     }
 }
 

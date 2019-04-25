@@ -91,7 +91,10 @@
             this.buttonFiveCent.Name = "buttonFiveCent";
             this.buttonFiveCent.Size = new System.Drawing.Size(93, 91);
             this.buttonFiveCent.TabIndex = 4;
+            this.buttonFiveCent.Text = "0.05";
+            this.buttonFiveCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonFiveCent.UseVisualStyleBackColor = false;
+            this.buttonFiveCent.Visible = false;
             // 
             // buttonTwoEuro
             // 

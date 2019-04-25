@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BalanceMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalanceMenu.Designer.cs">
+      <DependentUpon>BalanceMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Coins.cs" />
     <Compile Include="LekkersUC.cs">
       <SubType>UserControl</SubType>
@@ -65,6 +71,9 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BalanceMenu.resx">
+      <DependentUpon>BalanceMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LekkersUC.resx">
       <DependentUpon>LekkersUC.cs</DependentUpon>
     </EmbeddedResource>

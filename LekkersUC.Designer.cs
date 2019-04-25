@@ -32,10 +32,11 @@
             // 
             // LekkersUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LekkersUC";
-            this.Size = new System.Drawing.Size(168, 172);
+            this.Size = new System.Drawing.Size(200, 350);
             this.ResumeLayout(false);
 
         }

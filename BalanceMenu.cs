@@ -16,5 +16,11 @@ namespace VendingMachien
         {
             InitializeComponent();
         }
+
+        private void button_click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            labelCurrentBalanceValue.Text = labelCurrentBalanceValue.Text + button.Text;
+        }
     }
 }

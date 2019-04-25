@@ -62,6 +62,12 @@
     <Compile Include="LekkersUC.Designer.cs">
       <DependentUpon>LekkersUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="RefundBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RefundBalance.Designer.cs">
+      <DependentUpon>RefundBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="VendingMachien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LekkersUC.resx">
       <DependentUpon>LekkersUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefundBalance.resx">
+      <DependentUpon>RefundBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendingMachien.resx">
       <DependentUpon>VendingMachien.cs</DependentUpon>

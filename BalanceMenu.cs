@@ -12,6 +12,7 @@ namespace VendingMachien
 {
     public partial class BalanceMenu : Form
     {
+       public decimal CurrentBalance;
         public BalanceMenu()
         {
             InitializeComponent();
@@ -19,14 +20,24 @@ namespace VendingMachien
 
         private void button_click(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
+
+            var moneyValue = Decimal.Parse(button.Text);
+
+            CurrentBalance = CurrentBalance + moneyValue;
+
             if (labelCurrentBalanceValue.Text == "0")
             {
                 labelCurrentBalanceValue.Text = "";
             }
-            Button button = (Button)sender;
-            labelCurrentBalanceValue.Text = labelCurrentBalanceValue.Text + button.Text;
 
-            
+            labelCurrentBalanceValue.Text = CurrentBalance.ToString("C");
+        }
+
+        private void ButtonRefundBalance_Click(object sender, EventArgs e)
+        {
+            CurrentBalance = 0;
+            labelCurrentBalanceValue.Text = CurrentBalance.ToString("C");
         }
     }
 }

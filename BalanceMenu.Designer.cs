@@ -38,7 +38,6 @@
             this.buttonTwentyCent = new System.Windows.Forms.Button();
             this.buttonOneEuro = new System.Windows.Forms.Button();
             this.buttonTwoEuro = new System.Windows.Forms.Button();
-            this.labelEuro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonRefundBalance
@@ -56,6 +55,7 @@
             this.buttonRefundBalance.TabIndex = 1;
             this.buttonRefundBalance.Text = "Refund Balance";
             this.buttonRefundBalance.UseVisualStyleBackColor = false;
+            this.buttonRefundBalance.Click += new System.EventHandler(this.ButtonRefundBalance_Click);
             // 
             // labelCurrentBalance
             // 
@@ -93,10 +93,9 @@
             this.buttonFiveCent.Name = "buttonFiveCent";
             this.buttonFiveCent.Size = new System.Drawing.Size(112, 124);
             this.buttonFiveCent.TabIndex = 4;
-            this.buttonFiveCent.Text = "0.05";
+            this.buttonFiveCent.Text = "0,05";
             this.buttonFiveCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonFiveCent.UseVisualStyleBackColor = false;
-            this.buttonFiveCent.Visible = false;
             this.buttonFiveCent.Click += new System.EventHandler(this.button_click);
             // 
             // buttonFiftyCent
@@ -115,7 +114,7 @@
             this.buttonFiftyCent.Name = "buttonFiftyCent";
             this.buttonFiftyCent.Size = new System.Drawing.Size(100, 130);
             this.buttonFiftyCent.TabIndex = 7;
-            this.buttonFiftyCent.Text = "0.50";
+            this.buttonFiftyCent.Text = "0,50";
             this.buttonFiftyCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonFiftyCent.UseVisualStyleBackColor = false;
             this.buttonFiftyCent.Click += new System.EventHandler(this.button_click);
@@ -136,7 +135,7 @@
             this.buttonTenCent.Name = "buttonTenCent";
             this.buttonTenCent.Size = new System.Drawing.Size(86, 111);
             this.buttonTenCent.TabIndex = 9;
-            this.buttonTenCent.Text = "0.10";
+            this.buttonTenCent.Text = "0,10";
             this.buttonTenCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTenCent.UseVisualStyleBackColor = false;
             this.buttonTenCent.Click += new System.EventHandler(this.button_click);
@@ -157,7 +156,7 @@
             this.buttonTwentyCent.Name = "buttonTwentyCent";
             this.buttonTwentyCent.Size = new System.Drawing.Size(93, 120);
             this.buttonTwentyCent.TabIndex = 10;
-            this.buttonTwentyCent.Text = "0.20";
+            this.buttonTwentyCent.Text = "0,20";
             this.buttonTwentyCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTwentyCent.UseVisualStyleBackColor = false;
             this.buttonTwentyCent.Click += new System.EventHandler(this.button_click);
@@ -204,23 +203,12 @@
             this.buttonTwoEuro.UseVisualStyleBackColor = false;
             this.buttonTwoEuro.Click += new System.EventHandler(this.button_click);
             // 
-            // labelEuro
-            // 
-            this.labelEuro.AutoSize = true;
-            this.labelEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.labelEuro.Location = new System.Drawing.Point(407, 11);
-            this.labelEuro.Name = "labelEuro";
-            this.labelEuro.Size = new System.Drawing.Size(29, 31);
-            this.labelEuro.TabIndex = 13;
-            this.labelEuro.Text = "€";
-            // 
             // BalanceMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.ClientSize = new System.Drawing.Size(560, 545);
-            this.Controls.Add(this.labelEuro);
             this.Controls.Add(this.buttonTwoEuro);
             this.Controls.Add(this.buttonOneEuro);
             this.Controls.Add(this.buttonTwentyCent);
@@ -247,6 +235,5 @@
         private System.Windows.Forms.Button buttonTwentyCent;
         private System.Windows.Forms.Button buttonOneEuro;
         private System.Windows.Forms.Button buttonTwoEuro;
-        private System.Windows.Forms.Label labelEuro;
     }
 }

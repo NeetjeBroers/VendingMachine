@@ -20,5 +20,6 @@ namespace VendingMachien
             this.Stock = stock;
             this.Available = available;
         }
+
     }
 }

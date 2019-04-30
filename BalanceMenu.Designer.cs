@@ -93,7 +93,7 @@
             this.buttonFiveCent.Name = "buttonFiveCent";
             this.buttonFiveCent.Size = new System.Drawing.Size(112, 124);
             this.buttonFiveCent.TabIndex = 4;
-            this.buttonFiveCent.Text = "0,05";
+            this.buttonFiveCent.Text = "5";
             this.buttonFiveCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonFiveCent.UseVisualStyleBackColor = false;
             this.buttonFiveCent.Click += new System.EventHandler(this.button_click);
@@ -114,7 +114,7 @@
             this.buttonFiftyCent.Name = "buttonFiftyCent";
             this.buttonFiftyCent.Size = new System.Drawing.Size(100, 130);
             this.buttonFiftyCent.TabIndex = 7;
-            this.buttonFiftyCent.Text = "0,50";
+            this.buttonFiftyCent.Text = "50";
             this.buttonFiftyCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonFiftyCent.UseVisualStyleBackColor = false;
             this.buttonFiftyCent.Click += new System.EventHandler(this.button_click);
@@ -135,7 +135,7 @@
             this.buttonTenCent.Name = "buttonTenCent";
             this.buttonTenCent.Size = new System.Drawing.Size(86, 111);
             this.buttonTenCent.TabIndex = 9;
-            this.buttonTenCent.Text = "0,10";
+            this.buttonTenCent.Text = "10";
             this.buttonTenCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTenCent.UseVisualStyleBackColor = false;
             this.buttonTenCent.Click += new System.EventHandler(this.button_click);
@@ -156,7 +156,7 @@
             this.buttonTwentyCent.Name = "buttonTwentyCent";
             this.buttonTwentyCent.Size = new System.Drawing.Size(93, 120);
             this.buttonTwentyCent.TabIndex = 10;
-            this.buttonTwentyCent.Text = "0,20";
+            this.buttonTwentyCent.Text = "20";
             this.buttonTwentyCent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTwentyCent.UseVisualStyleBackColor = false;
             this.buttonTwentyCent.Click += new System.EventHandler(this.button_click);
@@ -177,7 +177,7 @@
             this.buttonOneEuro.Name = "buttonOneEuro";
             this.buttonOneEuro.Size = new System.Drawing.Size(93, 124);
             this.buttonOneEuro.TabIndex = 11;
-            this.buttonOneEuro.Text = "1";
+            this.buttonOneEuro.Text = "100";
             this.buttonOneEuro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonOneEuro.UseVisualStyleBackColor = false;
             this.buttonOneEuro.Click += new System.EventHandler(this.button_click);
@@ -198,7 +198,7 @@
             this.buttonTwoEuro.Name = "buttonTwoEuro";
             this.buttonTwoEuro.Size = new System.Drawing.Size(108, 134);
             this.buttonTwoEuro.TabIndex = 12;
-            this.buttonTwoEuro.Text = "2";
+            this.buttonTwoEuro.Text = "200";
             this.buttonTwoEuro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTwoEuro.UseVisualStyleBackColor = false;
             this.buttonTwoEuro.Click += new System.EventHandler(this.button_click);

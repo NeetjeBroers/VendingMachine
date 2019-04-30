@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlXml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,7 +56,7 @@
     <Compile Include="BalanceMenu.Designer.cs">
       <DependentUpon>BalanceMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Coins.cs" />
+    <Compile Include="Coin.cs" />
     <Compile Include="LekkersUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

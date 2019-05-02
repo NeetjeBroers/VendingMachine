@@ -57,11 +57,11 @@
       <DependentUpon>BalanceMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Coin.cs" />
-    <Compile Include="LekkersUC.cs">
+    <Compile Include="ProductUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LekkersUC.Designer.cs">
-      <DependentUpon>LekkersUC.cs</DependentUpon>
+    <Compile Include="ProductUC.Designer.cs">
+      <DependentUpon>ProductUC.cs</DependentUpon>
     </Compile>
     <Compile Include="RefundBalance.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="BalanceMenu.resx">
       <DependentUpon>BalanceMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LekkersUC.resx">
-      <DependentUpon>LekkersUC.cs</DependentUpon>
+    <EmbeddedResource Include="ProductUC.resx">
+      <DependentUpon>ProductUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RefundBalance.resx">
       <DependentUpon>RefundBalance.cs</DependentUpon>

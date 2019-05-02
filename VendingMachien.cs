@@ -66,32 +66,38 @@ namespace VendingMachien
             panelProduct.Controls.Clear();
             ConnectionObject.Open();
 
-            string productQuery = "select * from product order by productID";
+            string productQuery = "select * from product order by ProductID";
             MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
             MySqlDataReader reader = command.ExecuteReader();
 
+            var imageNr = 0;
+            var rowNr = 0;
 
             while (reader.Read())
             {
-                LekkersUC ucProduct = new LekkersUC();
+                ProductUC ucProduct = new ProductUC();
                 ucProduct.BackgroundImage = Image.FromFile(reader.GetString("LinkAfbeelding"));
-                ucProduct.Id = reader.GetInt32("IDProduct");
-                ucProduct.Naam = reader.GetString("Naam");
-                ucProduct.Prijs = reader.GetFloat("Prijs");
-                ucProduct.WichtArticle = reader.GetBoolean("WichtArticle");
-                ucProduct.Eenheid = reader.GetString("Eenheid");
+                ucProduct.ID = reader.GetInt32("ProductID");
+                ucProduct.Name = reader.GetString("ProductName");
+                ucProduct.Price = reader.GetInt32("ProductPrice");               
+                ucProduct.Stock = reader.GetInt32("ProductStock");
                 ucProduct.Left = 160 * imageNr;
                 ucProduct.Top = 160 * rowNr;
                 ucProduct.Click += UcProduct_Click;
-                pnlProduct.Controls.Add(ucProduct);
+                panelProduct.Controls.Add(ucProduct);
                 imageNr++;
-                if ((imageNr * 160) + 150 >= pnlProduct.Width - 20)
+                if ((imageNr * 160) + 150 >= panelProduct.Width - 20)
                 {
                     imageNr = 0;
                     rowNr++;
                 }
             }
             ConnectionObject.Close();
+        }
+        private void UcProduct_Click(object sender, EventArgs e)
+        {
+            var ucProduct = (ProductUC)sender;
+           
         }
     }
 

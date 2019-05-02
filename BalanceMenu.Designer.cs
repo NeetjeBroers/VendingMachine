@@ -38,6 +38,7 @@
             this.buttonTwentyCent = new System.Windows.Forms.Button();
             this.buttonOneEuro = new System.Windows.Forms.Button();
             this.buttonTwoEuro = new System.Windows.Forms.Button();
+            this.buttonAddBalance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonRefundBalance
@@ -84,6 +85,8 @@
             this.buttonFiveCent.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonFiveCent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonFiveCent.FlatAppearance.BorderSize = 0;
+            this.buttonFiveCent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonFiveCent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonFiveCent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFiveCent.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFiveCent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -105,6 +108,8 @@
             this.buttonFiftyCent.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonFiftyCent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonFiftyCent.FlatAppearance.BorderSize = 0;
+            this.buttonFiftyCent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonFiftyCent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonFiftyCent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFiftyCent.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFiftyCent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -126,6 +131,8 @@
             this.buttonTenCent.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonTenCent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonTenCent.FlatAppearance.BorderSize = 0;
+            this.buttonTenCent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonTenCent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonTenCent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTenCent.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTenCent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -147,6 +154,8 @@
             this.buttonTwentyCent.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonTwentyCent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonTwentyCent.FlatAppearance.BorderSize = 0;
+            this.buttonTwentyCent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonTwentyCent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonTwentyCent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTwentyCent.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTwentyCent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -168,6 +177,8 @@
             this.buttonOneEuro.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonOneEuro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonOneEuro.FlatAppearance.BorderSize = 0;
+            this.buttonOneEuro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonOneEuro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonOneEuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOneEuro.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOneEuro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -184,11 +195,13 @@
             // 
             // buttonTwoEuro
             // 
-            this.buttonTwoEuro.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTwoEuro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonTwoEuro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonTwoEuro.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonTwoEuro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonTwoEuro.FlatAppearance.BorderSize = 0;
+            this.buttonTwoEuro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
+            this.buttonTwoEuro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.buttonTwoEuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTwoEuro.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTwoEuro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
@@ -203,12 +216,30 @@
             this.buttonTwoEuro.UseVisualStyleBackColor = false;
             this.buttonTwoEuro.Click += new System.EventHandler(this.button_click);
             // 
+            // buttonAddBalance
+            // 
+            this.buttonAddBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonAddBalance.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAddBalance.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonAddBalance.FlatAppearance.BorderSize = 5;
+            this.buttonAddBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddBalance.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonAddBalance.Location = new System.Drawing.Point(401, 345);
+            this.buttonAddBalance.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonAddBalance.Name = "buttonAddBalance";
+            this.buttonAddBalance.Size = new System.Drawing.Size(110, 71);
+            this.buttonAddBalance.TabIndex = 13;
+            this.buttonAddBalance.Text = "Add Balance";
+            this.buttonAddBalance.UseVisualStyleBackColor = false;
+            this.buttonAddBalance.Click += new System.EventHandler(this.ButtonAddBalance_Click);
+            // 
             // BalanceMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.ClientSize = new System.Drawing.Size(560, 545);
+            this.Controls.Add(this.buttonAddBalance);
             this.Controls.Add(this.buttonTwoEuro);
             this.Controls.Add(this.buttonOneEuro);
             this.Controls.Add(this.buttonTwentyCent);
@@ -237,5 +268,6 @@
         private System.Windows.Forms.Button buttonTwentyCent;
         private System.Windows.Forms.Button buttonOneEuro;
         private System.Windows.Forms.Button buttonTwoEuro;
+        private System.Windows.Forms.Button buttonAddBalance;
     }
 }

@@ -135,6 +135,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormVendingMachine";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vending Machine";
             this.Load += new System.EventHandler(this.FormVendingMachine_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -150,7 +154,7 @@
         private System.Windows.Forms.Panel panelProduct;
         private System.Windows.Forms.Button buttonAddBalance;
         private System.Windows.Forms.Label labelBalanceText;
-        private System.Windows.Forms.Label labelCurrentBalanceValue;
+        public System.Windows.Forms.Label labelCurrentBalanceValue;
     }
 }
 

@@ -31,11 +31,9 @@ namespace VendingMachien
         }
         private void ButtonAddBalance_Click(object sender, EventArgs e)
         {
-            BalanceMenu balanceMenu = new BalanceMenu();
-            balanceMenu.Show();
-            balanceMenu.Refresh();
-
-            labelCurrentBalanceValue.Text = BalanceMenu.CurrentBalanceValue;
+            var formBalanceMenu = new BalanceMenu(this);
+            formBalanceMenu.Show();
+            
         }
 
         private void ShowProducts()

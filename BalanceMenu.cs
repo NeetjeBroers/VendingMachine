@@ -13,13 +13,23 @@ namespace VendingMachien
     public partial class BalanceMenu : Form
     {
         public static string CurrentBalanceValue = "";
+        public FormVendingMachine vending;
 
         public int CurrentBalance;
         CoinHelper coin = new CoinHelper();
-        public BalanceMenu()
+
+        public BalanceMenu(FormVendingMachine vendingMachine)
         {
             InitializeComponent();
+            vending = vendingMachine;
+        }
 
+        private void ButtonAddBalance_Click(object sender, EventArgs e)
+        {
+            double testXx = coin.TotalAmount;
+            testXx = testXx / 100;
+            vending.labelCurrentBalanceValue.Text = testXx.ToString("C");
+            MessageBox.Show("Balance has been added");
         }
 
         private void button_click(object sender, EventArgs e)
@@ -45,7 +55,10 @@ namespace VendingMachien
                             coin.Coin50.ToString() + " X 0,50" + Environment.NewLine +
                             coin.Coin100.ToString() + " X 1,00" + Environment.NewLine +
                             coin.Coin200.ToString() + " X 2,00");
+
             labelCurrentBalanceValue.Text = "0,00";
+            vending.labelCurrentBalanceValue.Text = "0,00";
+
         }
     }
 }

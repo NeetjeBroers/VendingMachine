@@ -56,7 +56,8 @@
     <Compile Include="BalanceMenu.Designer.cs">
       <DependentUpon>BalanceMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Coin.cs" />
+    <Compile Include="Helpers\CoinHelper.cs" />
+    <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="ProductUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,7 +76,6 @@
     <Compile Include="VendingMachien.Designer.cs">
       <DependentUpon>VendingMachien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BalanceMenu.resx">

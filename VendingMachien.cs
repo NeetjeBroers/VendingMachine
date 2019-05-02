@@ -13,61 +13,38 @@ namespace VendingMachien
 {
     public partial class FormVendingMachine : Form
     {
-        MySqlConnection ConnectionObject;
+        DatabaseHelper database = new DatabaseHelper();
         public float Price = 120;
         public float Input = 200;
         public FormVendingMachine()
         {
             InitializeComponent();
-            Product snickers = new Product("Snickers", 120, 30, true);
-            Coin Euro = new Coin();
-
-            Input = -Price;
-            decimal a = 80 / 20;
-            Math.Floor(a);
-
-            label1.Text = a.ToString();
-
+            CoinHelper Euro = new CoinHelper();
         }
 
         private void FormVendingMachine_Load(object sender, EventArgs e)
         {
+            database.mySqlConnection();
+            ShowProducts();
+
 
         }
         private void ButtonAddBalance_Click(object sender, EventArgs e)
         {
             BalanceMenu balanceMenu = new BalanceMenu();
             balanceMenu.Show();
+            balanceMenu.Refresh();
+
+            labelCurrentBalanceValue.Text = BalanceMenu.CurrentBalanceValue;
         }
 
-        private void mySqlConnection()
-        {
-            string conString = "Server= localhost; Database = vendingmachine; Uid=root";
-
-            try
-            {
-                if (ConnectionObject == null)
-                    ConnectionObject = new MySqlConnection(conString);
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 0:
-                        MessageBox.Show("Cannot connect to server. Contact administrator");
-                        break;
-                    default:
-                        throw;
-                }
-            }
-        }
-        private void ShowProductLB()
+        private void ShowProducts()
         {
             panelProduct.Controls.Clear();
-            ConnectionObject.Open();
+            database.ConnectionObject.Open();
 
             string productQuery = "select * from product order by ProductID";
-            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlCommand command = new MySqlCommand(productQuery, database.ConnectionObject);
             MySqlDataReader reader = command.ExecuteReader();
 
             var imageNr = 0;
@@ -76,28 +53,34 @@ namespace VendingMachien
             while (reader.Read())
             {
                 ProductUC ucProduct = new ProductUC();
-                ucProduct.BackgroundImage = Image.FromFile(reader.GetString("LinkAfbeelding"));
+                ucProduct.BackgroundImage = Image.FromFile(reader.GetString("ImagePath"));
                 ucProduct.ID = reader.GetInt32("ProductID");
                 ucProduct.Name = reader.GetString("ProductName");
-                ucProduct.Price = reader.GetInt32("ProductPrice");               
+                ucProduct.Price = reader.GetInt32("ProductPrice");
                 ucProduct.Stock = reader.GetInt32("ProductStock");
                 ucProduct.Left = 160 * imageNr;
-                ucProduct.Top = 160 * rowNr;
+                ucProduct.Top = 300 * rowNr;
                 ucProduct.Click += UcProduct_Click;
                 panelProduct.Controls.Add(ucProduct);
                 imageNr++;
-                if ((imageNr * 160) + 150 >= panelProduct.Width - 20)
+                if ((imageNr * 160) + 15 >= panelProduct.Width - 20)
                 {
                     imageNr = 0;
                     rowNr++;
                 }
             }
-            ConnectionObject.Close();
+            database.ConnectionObject.Close();
         }
         private void UcProduct_Click(object sender, EventArgs e)
         {
             var ucProduct = (ProductUC)sender;
-           
+
+        }
+
+        private void BalanceMenu_FormClosed(object sender, FormClosingEventArgs e)
+        {
+                CoinHelper coin = new CoinHelper();
+                BalanceMenu.CurrentBalanceValue = coin.TotalAmount.ToString();
         }
     }
 

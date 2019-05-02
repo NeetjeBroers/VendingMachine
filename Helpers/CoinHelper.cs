@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendingMachien
 {
-    public class Coin
+    public class CoinHelper
 
     {
         public int TotalAmount { get; set; }

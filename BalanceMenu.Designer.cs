@@ -218,6 +218,8 @@
             this.Controls.Add(this.labelCurrentBalanceValue);
             this.Controls.Add(this.labelCurrentBalance);
             this.Controls.Add(this.buttonRefundBalance);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BalanceMenu";
             this.Text = "Balance Menu";
             this.ResumeLayout(false);

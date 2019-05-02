@@ -37,7 +37,7 @@
             // 
             this.labelProductName.AutoSize = true;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.labelProductName.Location = new System.Drawing.Point(31, 244);
+            this.labelProductName.Location = new System.Drawing.Point(15, 238);
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(119, 31);
             this.labelProductName.TabIndex = 0;
@@ -46,7 +46,7 @@
             // labelProductPrice
             // 
             this.labelProductPrice.AutoSize = true;
-            this.labelProductPrice.Location = new System.Drawing.Point(3, 284);
+            this.labelProductPrice.Location = new System.Drawing.Point(-3, 284);
             this.labelProductPrice.Name = "labelProductPrice";
             this.labelProductPrice.Size = new System.Drawing.Size(64, 13);
             this.labelProductPrice.TabIndex = 1;
@@ -55,7 +55,7 @@
             // labelProductStock
             // 
             this.labelProductStock.AutoSize = true;
-            this.labelProductStock.Location = new System.Drawing.Point(129, 284);
+            this.labelProductStock.Location = new System.Drawing.Point(100, 284);
             this.labelProductStock.Name = "labelProductStock";
             this.labelProductStock.Size = new System.Drawing.Size(50, 13);
             this.labelProductStock.TabIndex = 2;
@@ -69,7 +69,7 @@
             this.Controls.Add(this.labelProductPrice);
             this.Controls.Add(this.labelProductName);
             this.Name = "ProductUC";
-            this.Size = new System.Drawing.Size(182, 306);
+            this.Size = new System.Drawing.Size(150, 300);
             this.ResumeLayout(false);
             this.PerformLayout();
 

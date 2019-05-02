@@ -68,5 +68,21 @@ namespace VendingMachien
             TotalAmount = (coin5 * 5) + (coin10 * 10) + (coin20 * 20) + (coin50 * 50) + (coin100 * 100) + (coin200 * 200);
         }
 
+
+        public int ConvertCurrencyToInt(string currencyValue)
+        {
+            var currentBalanceWithoutCurrency = currencyValue.Substring(2, currencyValue.Length - 2);
+
+            var decimalCurrentBalanceWithoutCurrency = decimal.Parse(currentBalanceWithoutCurrency);
+
+            var decimalToIntCurrentBalanceWithoutCurrency = decimalCurrentBalanceWithoutCurrency * 100;
+
+            var intCurrentBalance = decimal.ToInt32(decimalToIntCurrentBalanceWithoutCurrency);
+
+            int currentBalanceValue = Int32.Parse(intCurrentBalance.ToString());
+
+            return currentBalanceValue;
+        }
+
     }
 }

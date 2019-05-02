@@ -14,12 +14,14 @@ namespace VendingMachien
     public partial class FormVendingMachine : Form
     {
         DatabaseHelper database = new DatabaseHelper();
+        EmailHelper email = new EmailHelper();
         public float Price = 120;
         public float Input = 200;
+        CoinHelper coin = new CoinHelper();
         public FormVendingMachine()
         {
             InitializeComponent();
-            CoinHelper Euro = new CoinHelper();
+
         }
 
         private void FormVendingMachine_Load(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace VendingMachien
         {
             var formBalanceMenu = new BalanceMenu(this);
             formBalanceMenu.Show();
-            
+
         }
 
         private void ShowProducts()
@@ -55,7 +57,9 @@ namespace VendingMachien
                 ucProduct.ID = reader.GetInt32("ProductID");
                 ucProduct.Name = reader.GetString("ProductName");
                 ucProduct.Price = reader.GetInt32("ProductPrice");
+                ucProduct.labelProductPrice.Text = (Convert.ToDouble(ucProduct.Price) / 100).ToString("C");
                 ucProduct.Stock = reader.GetInt32("ProductStock");
+                ucProduct.labelProductStock.Text = ucProduct.Stock.ToString();
                 ucProduct.Left = 160 * imageNr;
                 ucProduct.Top = 300 * rowNr;
                 ucProduct.Click += UcProduct_Click;
@@ -72,13 +76,48 @@ namespace VendingMachien
         private void UcProduct_Click(object sender, EventArgs e)
         {
             var ucProduct = (ProductUC)sender;
+            var selectedProduct = database.GetProduct(ucProduct.ID.ToString());
+            var currentBalanceValue = coin.ConvertCurrencyToInt(labelCurrentBalanceValue.Text);
+            coin.SetTotalAmount(currentBalanceValue);
 
+            if (selectedProduct.Stock == 4)
+            {
+                email.SendAlmostOutOfStockEmail(selectedProduct.Stock,selectedProduct.Name);
+            }
+            if (selectedProduct.Stock <= 0)
+            {
+                MessageBox.Show("Not in Stock, Send Email out of stock");
+
+            }
+            else if (selectedProduct.Price > coin.TotalAmount)
+            {
+                MessageBox.Show("Not enough balance, insert more coins");
+            }
+            else
+            {
+                listBoxSoldProducts.Items.Insert(0,selectedProduct.Name);
+                coin.TotalAmount = coin.TotalAmount - selectedProduct.Price;
+                labelCurrentBalanceValue.Text = (Convert.ToDouble(coin.TotalAmount) / 100).ToString("C");
+                database.ChangeStock(ucProduct.ID.ToString(), ucProduct.Stock - 1);
+                database.AddToLedger(ucProduct.ID.ToString());
+                ucProduct.Stock = ucProduct.Stock - 1;
+                ucProduct.labelProductStock.Text = ucProduct.Stock.ToString();
+            }
         }
 
-        private void BalanceMenu_FormClosed(object sender, FormClosingEventArgs e)
+        private void ButtonRefundBalance_Click(object sender, EventArgs e)
         {
-                CoinHelper coin = new CoinHelper();
-                BalanceMenu.CurrentBalanceValue = coin.TotalAmount.ToString();
+            var currentBalanceValue = coin.ConvertCurrencyToInt(labelCurrentBalanceValue.Text);
+            coin.SetTotalAmount(currentBalanceValue);
+
+            MessageBox.Show(coin.Coin5.ToString() + " X 0,05" + Environment.NewLine +
+                               coin.Coin10.ToString() + " X 0,10" + Environment.NewLine +
+                               coin.Coin20.ToString() + " X 0,20" + Environment.NewLine +
+                               coin.Coin50.ToString() + " X 0,50" + Environment.NewLine +
+                               coin.Coin100.ToString() + " X 1,00" + Environment.NewLine +
+                               coin.Coin200.ToString() + " X 2,00");
+
+            labelCurrentBalanceValue.Text = "€ 0,00";
         }
     }
 

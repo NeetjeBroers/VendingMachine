@@ -56,8 +56,10 @@
     <Compile Include="BalanceMenu.Designer.cs">
       <DependentUpon>BalanceMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Helpers\CoinHelper.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Model\ProductModel.cs" />
     <Compile Include="ProductUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

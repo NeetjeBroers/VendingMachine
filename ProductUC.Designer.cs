@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelProductName = new System.Windows.Forms.Label();
             this.labelProductPrice = new System.Windows.Forms.Label();
             this.labelProductStock = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.labelProductName.Location = new System.Drawing.Point(15, 238);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(119, 31);
-            this.labelProductName.TabIndex = 0;
-            this.labelProductName.Text = "Snickers";
             // 
             // labelProductPrice
             // 
@@ -67,7 +56,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelProductStock);
             this.Controls.Add(this.labelProductPrice);
-            this.Controls.Add(this.labelProductName);
             this.Name = "ProductUC";
             this.Size = new System.Drawing.Size(150, 300);
             this.ResumeLayout(false);
@@ -77,8 +65,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelProductPrice;
-        private System.Windows.Forms.Label labelProductStock;
+        public System.Windows.Forms.Label labelProductPrice;
+        public System.Windows.Forms.Label labelProductStock;
     }
 }

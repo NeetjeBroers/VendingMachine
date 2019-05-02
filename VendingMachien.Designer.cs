@@ -30,12 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelProduct = new System.Windows.Forms.Panel();
             this.buttonAddBalance = new System.Windows.Forms.Button();
             this.labelBalanceText = new System.Windows.Forms.Label();
             this.labelCurrentBalanceValue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonRefundBalance = new System.Windows.Forms.Button();
+            this.listBoxSoldProducts = new System.Windows.Forms.ListBox();
+            this.labelTextProduct = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,18 +61,6 @@
             this.button1.Size = new System.Drawing.Size(14, 241);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(972, 8);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(216, 692);
-            this.dataGridView1.TabIndex = 3;
             // 
             // panelProduct
             // 
@@ -117,7 +106,42 @@
             this.labelCurrentBalanceValue.Name = "labelCurrentBalanceValue";
             this.labelCurrentBalanceValue.Size = new System.Drawing.Size(72, 25);
             this.labelCurrentBalanceValue.TabIndex = 7;
-            this.labelCurrentBalanceValue.Text = "€ 2,00";
+            this.labelCurrentBalanceValue.Text = "€ 0,00";
+            // 
+            // buttonRefundBalance
+            // 
+            this.buttonRefundBalance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefundBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonRefundBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefundBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.buttonRefundBalance.Location = new System.Drawing.Point(972, 804);
+            this.buttonRefundBalance.Name = "buttonRefundBalance";
+            this.buttonRefundBalance.Size = new System.Drawing.Size(151, 67);
+            this.buttonRefundBalance.TabIndex = 8;
+            this.buttonRefundBalance.Text = "Refund Balance";
+            this.buttonRefundBalance.UseVisualStyleBackColor = false;
+            this.buttonRefundBalance.Click += new System.EventHandler(this.ButtonRefundBalance_Click);
+            // 
+            // listBoxSoldProducts
+            // 
+            this.listBoxSoldProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxSoldProducts.FormattingEnabled = true;
+            this.listBoxSoldProducts.Location = new System.Drawing.Point(975, 48);
+            this.listBoxSoldProducts.Name = "listBoxSoldProducts";
+            this.listBoxSoldProducts.Size = new System.Drawing.Size(218, 654);
+            this.listBoxSoldProducts.TabIndex = 0;
+            // 
+            // labelTextProduct
+            // 
+            this.labelTextProduct.AutoSize = true;
+            this.labelTextProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.labelTextProduct.Location = new System.Drawing.Point(975, 8);
+            this.labelTextProduct.Name = "labelTextProduct";
+            this.labelTextProduct.Size = new System.Drawing.Size(183, 31);
+            this.labelTextProduct.TabIndex = 9;
+            this.labelTextProduct.Text = "Products Sold";
             // 
             // FormVendingMachine
             // 
@@ -125,11 +149,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.ClientSize = new System.Drawing.Size(1196, 972);
+            this.Controls.Add(this.labelTextProduct);
+            this.Controls.Add(this.listBoxSoldProducts);
+            this.Controls.Add(this.buttonRefundBalance);
             this.Controls.Add(this.labelCurrentBalanceValue);
             this.Controls.Add(this.labelBalanceText);
             this.Controls.Add(this.buttonAddBalance);
             this.Controls.Add(this.panelProduct);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -141,7 +167,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vending Machine";
             this.Load += new System.EventHandler(this.FormVendingMachine_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,11 +175,13 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panelProduct;
         private System.Windows.Forms.Button buttonAddBalance;
         private System.Windows.Forms.Label labelBalanceText;
         public System.Windows.Forms.Label labelCurrentBalanceValue;
+        private System.Windows.Forms.Button buttonRefundBalance;
+        private System.Windows.Forms.ListBox listBoxSoldProducts;
+        private System.Windows.Forms.Label labelTextProduct;
     }
 }
 

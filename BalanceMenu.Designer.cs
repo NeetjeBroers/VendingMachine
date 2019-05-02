@@ -29,54 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BalanceMenu));
-            this.buttonRefundBalance = new System.Windows.Forms.Button();
-            this.labelCurrentBalance = new System.Windows.Forms.Label();
-            this.labelCurrentBalanceValue = new System.Windows.Forms.Label();
             this.buttonFiveCent = new System.Windows.Forms.Button();
             this.buttonFiftyCent = new System.Windows.Forms.Button();
             this.buttonTenCent = new System.Windows.Forms.Button();
             this.buttonTwentyCent = new System.Windows.Forms.Button();
             this.buttonOneEuro = new System.Windows.Forms.Button();
             this.buttonTwoEuro = new System.Windows.Forms.Button();
-            this.buttonAddBalance = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonRefundBalance
-            // 
-            this.buttonRefundBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
-            this.buttonRefundBalance.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonRefundBalance.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonRefundBalance.FlatAppearance.BorderSize = 5;
-            this.buttonRefundBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefundBalance.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonRefundBalance.Location = new System.Drawing.Point(401, 439);
-            this.buttonRefundBalance.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonRefundBalance.Name = "buttonRefundBalance";
-            this.buttonRefundBalance.Size = new System.Drawing.Size(110, 71);
-            this.buttonRefundBalance.TabIndex = 1;
-            this.buttonRefundBalance.Text = "Refund Balance";
-            this.buttonRefundBalance.UseVisualStyleBackColor = false;
-            this.buttonRefundBalance.Click += new System.EventHandler(this.ButtonRefundBalance_Click);
-            // 
-            // labelCurrentBalance
-            // 
-            this.labelCurrentBalance.AutoSize = true;
-            this.labelCurrentBalance.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentBalance.Location = new System.Drawing.Point(303, 9);
-            this.labelCurrentBalance.Name = "labelCurrentBalance";
-            this.labelCurrentBalance.Size = new System.Drawing.Size(113, 35);
-            this.labelCurrentBalance.TabIndex = 2;
-            this.labelCurrentBalance.Text = "Balance";
-            // 
-            // labelCurrentBalanceValue
-            // 
-            this.labelCurrentBalanceValue.AutoSize = true;
-            this.labelCurrentBalanceValue.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentBalanceValue.Location = new System.Drawing.Point(442, 9);
-            this.labelCurrentBalanceValue.Name = "labelCurrentBalanceValue";
-            this.labelCurrentBalanceValue.Size = new System.Drawing.Size(31, 35);
-            this.labelCurrentBalanceValue.TabIndex = 3;
-            this.labelCurrentBalanceValue.Text = "0";
             // 
             // buttonFiveCent
             // 
@@ -216,58 +176,51 @@
             this.buttonTwoEuro.UseVisualStyleBackColor = false;
             this.buttonTwoEuro.Click += new System.EventHandler(this.button_click);
             // 
-            // buttonAddBalance
+            // buttonClose
             // 
-            this.buttonAddBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
-            this.buttonAddBalance.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonAddBalance.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonAddBalance.FlatAppearance.BorderSize = 5;
-            this.buttonAddBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddBalance.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Bold);
-            this.buttonAddBalance.Location = new System.Drawing.Point(401, 345);
-            this.buttonAddBalance.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonAddBalance.Name = "buttonAddBalance";
-            this.buttonAddBalance.Size = new System.Drawing.Size(110, 71);
-            this.buttonAddBalance.TabIndex = 13;
-            this.buttonAddBalance.Text = "Add Balance";
-            this.buttonAddBalance.UseVisualStyleBackColor = false;
-            this.buttonAddBalance.Click += new System.EventHandler(this.ButtonAddBalance_Click);
+            this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonClose.FlatAppearance.BorderSize = 5;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonClose.Location = new System.Drawing.Point(60, 416);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(194, 61);
+            this.buttonClose.TabIndex = 13;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // BalanceMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
-            this.ClientSize = new System.Drawing.Size(560, 545);
-            this.Controls.Add(this.buttonAddBalance);
+            this.ClientSize = new System.Drawing.Size(327, 494);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonTwoEuro);
             this.Controls.Add(this.buttonOneEuro);
             this.Controls.Add(this.buttonTwentyCent);
             this.Controls.Add(this.buttonTenCent);
             this.Controls.Add(this.buttonFiftyCent);
             this.Controls.Add(this.buttonFiveCent);
-            this.Controls.Add(this.labelCurrentBalanceValue);
-            this.Controls.Add(this.labelCurrentBalance);
-            this.Controls.Add(this.buttonRefundBalance);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BalanceMenu";
             this.Text = "Balance Menu";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonRefundBalance;
-        private System.Windows.Forms.Label labelCurrentBalance;
-        private System.Windows.Forms.Label labelCurrentBalanceValue;
         private System.Windows.Forms.Button buttonFiveCent;
         private System.Windows.Forms.Button buttonFiftyCent;
         private System.Windows.Forms.Button buttonTenCent;
         private System.Windows.Forms.Button buttonTwentyCent;
         private System.Windows.Forms.Button buttonOneEuro;
         private System.Windows.Forms.Button buttonTwoEuro;
-        private System.Windows.Forms.Button buttonAddBalance;
+        private System.Windows.Forms.Button buttonClose;
     }
 }

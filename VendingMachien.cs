@@ -82,11 +82,12 @@ namespace VendingMachien
 
             if (selectedProduct.Stock == 4)
             {
-                email.SendAlmostOutOfStockEmail(selectedProduct.Stock,selectedProduct.Name);
+                email.SendAlmostOutOfStockMail(selectedProduct.Stock,selectedProduct.Name);
             }
             if (selectedProduct.Stock <= 0)
             {
-                MessageBox.Show("Not in Stock, Send Email out of stock");
+                MessageBox.Show("Product out of stock");
+                email.SendOutOfStockMail(selectedProduct.Stock, selectedProduct.Name);
 
             }
             else if (selectedProduct.Price > coin.TotalAmount)

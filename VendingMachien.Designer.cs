@@ -37,6 +37,7 @@
             this.buttonRefundBalance = new System.Windows.Forms.Button();
             this.listBoxSoldProducts = new System.Windows.Forms.ListBox();
             this.labelTextProduct = new System.Windows.Forms.Label();
+            this.buttonShowAdminPage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,9 +81,9 @@
             this.buttonAddBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
             this.buttonAddBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.buttonAddBalance.Location = new System.Drawing.Point(972, 876);
+            this.buttonAddBalance.Location = new System.Drawing.Point(972, 864);
             this.buttonAddBalance.Name = "buttonAddBalance";
-            this.buttonAddBalance.Size = new System.Drawing.Size(151, 67);
+            this.buttonAddBalance.Size = new System.Drawing.Size(151, 48);
             this.buttonAddBalance.TabIndex = 5;
             this.buttonAddBalance.Text = "Add Balance";
             this.buttonAddBalance.UseVisualStyleBackColor = false;
@@ -114,11 +115,11 @@
             this.buttonRefundBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
             this.buttonRefundBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefundBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.buttonRefundBalance.Location = new System.Drawing.Point(972, 804);
+            this.buttonRefundBalance.Location = new System.Drawing.Point(972, 816);
             this.buttonRefundBalance.Name = "buttonRefundBalance";
-            this.buttonRefundBalance.Size = new System.Drawing.Size(151, 67);
+            this.buttonRefundBalance.Size = new System.Drawing.Size(151, 42);
             this.buttonRefundBalance.TabIndex = 8;
-            this.buttonRefundBalance.Text = "Refund Balance";
+            this.buttonRefundBalance.Text = "Refund";
             this.buttonRefundBalance.UseVisualStyleBackColor = false;
             this.buttonRefundBalance.Click += new System.EventHandler(this.ButtonRefundBalance_Click);
             // 
@@ -143,12 +144,28 @@
             this.labelTextProduct.TabIndex = 9;
             this.labelTextProduct.Text = "Products Sold";
             // 
+            // buttonShowAdminPage
+            // 
+            this.buttonShowAdminPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonShowAdminPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonShowAdminPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowAdminPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.buttonShowAdminPage.Location = new System.Drawing.Point(972, 816);
+            this.buttonShowAdminPage.Name = "buttonShowAdminPage";
+            this.buttonShowAdminPage.Size = new System.Drawing.Size(151, 42);
+            this.buttonShowAdminPage.TabIndex = 10;
+            this.buttonShowAdminPage.Text = "Reports";
+            this.buttonShowAdminPage.UseVisualStyleBackColor = false;
+            this.buttonShowAdminPage.Visible = false;
+            this.buttonShowAdminPage.Click += new System.EventHandler(this.ButtonShowAdminPage_Click);
+            // 
             // FormVendingMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.ClientSize = new System.Drawing.Size(1196, 972);
+            this.Controls.Add(this.buttonShowAdminPage);
             this.Controls.Add(this.labelTextProduct);
             this.Controls.Add(this.listBoxSoldProducts);
             this.Controls.Add(this.buttonRefundBalance);
@@ -162,7 +179,6 @@
             this.MinimizeBox = false;
             this.Name = "FormVendingMachine";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vending Machine";
@@ -182,6 +198,7 @@
         private System.Windows.Forms.Button buttonRefundBalance;
         private System.Windows.Forms.ListBox listBoxSoldProducts;
         private System.Windows.Forms.Label labelTextProduct;
+        private System.Windows.Forms.Button buttonShowAdminPage;
     }
 }
 

@@ -11,17 +11,28 @@ using MySql.Data.MySqlClient;
 
 namespace VendingMachien
 {
+
     public partial class FormVendingMachine : Form
     {
+        public bool AdminMode = false;
         DatabaseHelper database = new DatabaseHelper();
         EmailHelper email = new EmailHelper();
-        public float Price = 120;
-        public float Input = 200;
         CoinHelper coin = new CoinHelper();
-        public FormVendingMachine()
+
+        public FormVendingMachine(string[] args)
         {
             InitializeComponent();
 
+            if (args.Length > 0)
+            {
+                if (args[0].ToLower() == "/admin")
+                {
+                    buttonShowAdminPage.Visible = true;
+                    buttonAddBalance.Visible = false;
+                    buttonRefundBalance.Visible = false;
+                    AdminMode = true;
+                }
+            }
         }
 
         private void FormVendingMachine_Load(object sender, EventArgs e)
@@ -35,7 +46,6 @@ namespace VendingMachien
         {
             var formBalanceMenu = new BalanceMenu(this);
             formBalanceMenu.Show();
-
         }
 
         private void ShowProducts()
@@ -77,32 +87,45 @@ namespace VendingMachien
         {
             var ucProduct = (ProductUC)sender;
             var selectedProduct = database.GetProduct(ucProduct.ID.ToString());
-            var currentBalanceValue = coin.ConvertCurrencyToInt(labelCurrentBalanceValue.Text);
-            coin.SetTotalAmount(currentBalanceValue);
 
-            if (selectedProduct.Stock == 4)
+            if (AdminMode == true)
             {
-                email.SendAlmostOutOfStockMail(selectedProduct.Stock,selectedProduct.Name);
-            }
-            if (selectedProduct.Stock <= 0)
-            {
-                MessageBox.Show("Product out of stock");
-                email.SendOutOfStockMail(selectedProduct.Stock, selectedProduct.Name);
+                SetStock setStock = new SetStock();
+                setStock.ProductID = ucProduct.ID.ToString();
+                setStock.ProductName = ucProduct.Name;
+                setStock.ShowDialog();
 
-            }
-            else if (selectedProduct.Price > coin.TotalAmount)
-            {
-                MessageBox.Show("Not enough balance, insert more coins");
+                ShowProducts();
             }
             else
             {
-                listBoxSoldProducts.Items.Insert(0,selectedProduct.Name);
-                coin.TotalAmount = coin.TotalAmount - selectedProduct.Price;
-                labelCurrentBalanceValue.Text = (Convert.ToDouble(coin.TotalAmount) / 100).ToString("C");
-                database.ChangeStock(ucProduct.ID.ToString(), ucProduct.Stock - 1);
-                database.AddToLedger(ucProduct.ID.ToString());
-                ucProduct.Stock = ucProduct.Stock - 1;
-                ucProduct.labelProductStock.Text = ucProduct.Stock.ToString();
+                var currentBalanceValue = coin.ConvertCurrencyToInt(labelCurrentBalanceValue.Text);
+                coin.SetTotalAmount(currentBalanceValue);
+
+                if (selectedProduct.Stock == 4)
+                {
+                    email.SendAlmostOutOfStockMail(selectedProduct.Stock, selectedProduct.Name);
+                }
+                if (selectedProduct.Stock <= 0)
+                {
+                    MessageBox.Show("Product out of stock");
+                    email.SendOutOfStockMail(selectedProduct.Stock, selectedProduct.Name);
+
+                }
+                else if (selectedProduct.Price > coin.TotalAmount)
+                {
+                    MessageBox.Show("Not enough balance, insert more coins");
+                }
+                else
+                {
+                    listBoxSoldProducts.Items.Insert(0, selectedProduct.Name);
+                    coin.TotalAmount = coin.TotalAmount - selectedProduct.Price;
+                    labelCurrentBalanceValue.Text = (Convert.ToDouble(coin.TotalAmount) / 100).ToString("C");
+                    database.ChangeStock(ucProduct.ID.ToString(), ucProduct.Stock - 1);
+                    database.AddToLedger(ucProduct.ID.ToString());
+                    ucProduct.Stock = ucProduct.Stock - 1;
+                    ucProduct.labelProductStock.Text = ucProduct.Stock.ToString();
+                }
             }
         }
 
@@ -119,6 +142,13 @@ namespace VendingMachien
                                coin.Coin200.ToString() + " X 2,00");
 
             labelCurrentBalanceValue.Text = "€ 0,00";
+        }
+
+        private void ButtonShowAdminPage_Click(object sender, EventArgs e)
+        {
+            AdminPage adminpage = new AdminPage();
+
+            adminpage.Show();
         }
     }
 

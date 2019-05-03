@@ -77,5 +77,33 @@ namespace VendingMachien
 
             ConnectionObject.Close();
         }
+
+        public List<SaleDataModel> GetSalesData(string fromDate, string toDate)
+        {
+            ConnectionObject.Open();
+
+            string productQuery = "SELECT product.ProductName, productLedger.Product_productID, SUM(productLedger.ProductQuantity) AS Quantity " +
+                "FROM `productledger` AS productLedger, `product` " +
+                "AS product " +
+                "WHERE productLedger.DateTime >= '" + fromDate +
+                "' AND productLedger.DateTime <= '" + toDate +
+                "' AND productLedger.Product_productID = product.ProductID " +
+                "GROUP BY productLedger.Product_productID";
+            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            var salesDataList = new List<SaleDataModel>();
+            while (reader.Read())
+            {
+                var saleData = new SaleDataModel();
+                saleData.ProductName = reader.GetString("ProductName");
+                saleData.ProductSales = - reader.GetInt32("Quantity");
+                salesDataList.Add(saleData);
+            }
+
+            ConnectionObject.Close();
+
+            return salesDataList;
+        }
     }
 }

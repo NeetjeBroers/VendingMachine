@@ -66,6 +66,26 @@ namespace VendingMachien
 
             ConnectionObject.Close();
         }
+        public void ChangeCoinStockAdd(string coinName, int selectedCoin)
+        {
+            ConnectionObject.Open();
+
+            string productQuery = "UPDATE coin SET coinQuantity = coinQuantity + " + selectedCoin + " WHERE coinName = " + coinName;
+            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            ConnectionObject.Close();
+        }
+        public void ChangeCoinStockRemove(string coinName, int selectedCoin)
+        {
+            ConnectionObject.Open();
+
+            string productQuery = "UPDATE coin SET coinQuantity = coinQuantity - " + selectedCoin + " WHERE coinName = " + coinName;
+            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            ConnectionObject.Close();
+        }
 
         public void AddToLedger(string productID)
         {

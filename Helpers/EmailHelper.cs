@@ -10,7 +10,7 @@ namespace VendingMachien
 {
     class EmailHelper
     {
-        MailMessage mail = new MailMessage("vendingmachinenathan@gmail.com", "400028343@st.roc.a12.nl");
+        MailMessage mail = new MailMessage("vendingmachinnathan@gmail.com", "400029712@st.roc.a12.nl");
         public void SendAlmostOutOfStockMail(int productStock, string productName)
         {
             SmtpClient client = new SmtpClient()
@@ -27,7 +27,7 @@ namespace VendingMachien
             client.Send(mail);
             client.Dispose();
         }
-        public void SendOutOfStockMail(int productStock, string productName)
+        public void SendOutOfStockMail(string productName)
         {
             SmtpClient client = new SmtpClient()
             {

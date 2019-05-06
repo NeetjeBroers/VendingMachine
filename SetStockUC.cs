@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace VendingMachien
 {
-    public partial class SetStock : Form
+    public partial class SetStockUC : Form
     {
         public string ProductID { get; set; }
         public string ProductName { get; set; }
         DatabaseHelper database = new DatabaseHelper();
-        public SetStock()
+        public SetStockUC()
         {
             InitializeComponent();
             database.mySqlConnection();            

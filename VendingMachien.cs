@@ -90,7 +90,7 @@ namespace VendingMachien
 
             if (AdminMode == true)
             {
-                SetStock setStock = new SetStock();
+                SetStockUC setStock = new SetStockUC();
                 setStock.ProductID = ucProduct.ID.ToString();
                 setStock.ProductName = ucProduct.Name;
                 setStock.ShowDialog();
@@ -109,7 +109,7 @@ namespace VendingMachien
                 if (selectedProduct.Stock <= 0)
                 {
                     MessageBox.Show("Product out of stock");
-                    email.SendOutOfStockMail(selectedProduct.Stock, selectedProduct.Name);
+                    email.SendOutOfStockMail(selectedProduct.Name);
 
                 }
                 else if (selectedProduct.Price > coin.TotalAmount)
@@ -140,6 +140,8 @@ namespace VendingMachien
                                coin.Coin50.ToString() + " X 0,50" + Environment.NewLine +
                                coin.Coin100.ToString() + " X 1,00" + Environment.NewLine +
                                coin.Coin200.ToString() + " X 2,00");
+
+
 
             labelCurrentBalanceValue.Text = "€ 0,00";
         }

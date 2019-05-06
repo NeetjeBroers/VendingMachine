@@ -1,6 +1,6 @@
 ﻿namespace VendingMachien
 {
-    partial class SetStock
+    partial class SetStockUC
     {
         /// <summary>
         /// Required designer variable.

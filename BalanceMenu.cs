@@ -17,11 +17,12 @@ namespace VendingMachien
 
         public int CurrentBalance;
         CoinHelper coin = new CoinHelper();
-
+        DatabaseHelper database = new DatabaseHelper();
 
         public BalanceMenu(FormVendingMachine vendingMachine)
         {
             InitializeComponent();
+            database.mySqlConnection();
             vending = vendingMachine;
             coin.TotalAmount = coin.ConvertCurrencyToInt(vending.labelCurrentBalanceValue.Text);
         }
@@ -29,7 +30,7 @@ namespace VendingMachien
         private void button_click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-
+            database.ChangeCoinStockAdd(button.Text,1);
             var moneyValue = Int32.Parse(button.Text);
             coin.SetTotalAmount(coin.TotalAmount + moneyValue);            
             double totalAmount = coin.TotalAmount;

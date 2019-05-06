@@ -16,42 +16,60 @@ namespace VendingMachien
         public int Coin50 { get; set; }
         public int Coin100 { get; set; }
         public int Coin200 { get; set; }
+        public int Coin5Stock { get; set; }
+        public int Coin10Stock { get; set; }
+        public int Coin20Stock { get; set; }
+
+        public int Coin50Stock { get; set; }
+        public int Coin100Stock { get; set; }
+        public int Coin200Stock { get; set; }
 
         public void SetTotalAmount(int totalAmount)
 
         {
 
             TotalAmount = totalAmount;
-
             Coin200 = totalAmount / 200;
-
-            totalAmount = totalAmount % 200;
-
-
+            if (Coin200 > Coin200Stock)
+            {
+                Coin200 = Coin200Stock;
+            }
+            totalAmount = totalAmount - (Coin200 * 200);
 
             Coin100 = totalAmount / 100;
-
-            totalAmount = totalAmount % 100;
-
-
+            if (Coin100 > Coin100Stock)
+            {
+                Coin100 = Coin100Stock;
+            }
+            totalAmount = totalAmount - (Coin100 * 100);
 
             Coin50 = totalAmount / 50;
-
-            totalAmount = totalAmount % 50;
-
-
+            if (Coin50 > Coin50Stock)
+            {
+                Coin50 = Coin50Stock;
+            }
+            totalAmount = totalAmount - (Coin50 * 50);
 
             Coin20 = totalAmount / 20;
-
-            totalAmount = totalAmount % 20;
-
+            if (Coin20 > Coin20Stock)
+            {
+                Coin20 = Coin20Stock;
+            }
+            totalAmount = totalAmount - (Coin20 * 20);
 
             Coin10 = totalAmount / 10;
-            totalAmount = totalAmount % 10;
-
+            if (Coin10 > Coin10Stock)
+            {
+                Coin10 = Coin10Stock;
+            }
+            totalAmount = totalAmount - (Coin10 * 10);
 
             Coin5 = totalAmount / 5;
-            totalAmount = totalAmount % 5;
+            if (Coin5 > Coin5Stock)
+            {
+                Coin5 = Coin5Stock;
+            }
+            totalAmount = totalAmount - (Coin5 * 5);
         }
 
 

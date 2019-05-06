@@ -1,0 +1,1 @@
+UPDATE coin SET value = value - coin.coin5.tostring() WHERE coinName = 5

@@ -18,6 +18,7 @@ namespace VendingMachien
         public int CurrentBalance;
         CoinHelper coin = new CoinHelper();
         DatabaseHelper database = new DatabaseHelper();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"D:\Github Projects\VendingMachine\coin-sound\Coin.wav");
 
         public BalanceMenu(FormVendingMachine vendingMachine)
         {
@@ -28,7 +29,8 @@ namespace VendingMachien
         }
 
         private void button_click(object sender, EventArgs e)
-        {
+        {            
+            player.Play();
             Button button = (Button)sender;
             database.ChangeCoinStockAdd(button.Text,1);
             var moneyValue = Int32.Parse(button.Text);

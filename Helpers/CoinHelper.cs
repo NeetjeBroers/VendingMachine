@@ -16,10 +16,10 @@ namespace VendingMachien
         public int Coin50 { get; set; }
         public int Coin100 { get; set; }
         public int Coin200 { get; set; }
+
         public int Coin5Stock { get; set; }
         public int Coin10Stock { get; set; }
         public int Coin20Stock { get; set; }
-
         public int Coin50Stock { get; set; }
         public int Coin100Stock { get; set; }
         public int Coin200Stock { get; set; }

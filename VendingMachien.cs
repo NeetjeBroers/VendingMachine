@@ -18,6 +18,7 @@ namespace VendingMachien
         DatabaseHelper database = new DatabaseHelper();
         EmailHelper email = new EmailHelper();
         CoinHelper coin = new CoinHelper();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"D:\Github Projects\VendingMachine\coin-sound\coinreturn.wav");
 
         public FormVendingMachine(string[] args)
         {
@@ -28,6 +29,7 @@ namespace VendingMachien
                 if (args[0].ToLower() == "/admin")
                 {
                     buttonShowAdminPage.Visible = true;
+                    buttonAddCoinStock.Visible = true;
                     buttonAddBalance.Visible = false;
                     buttonRefundBalance.Visible = false;
                     AdminMode = true;
@@ -90,7 +92,7 @@ namespace VendingMachien
 
             if (AdminMode == true)
             {
-                SetStockUC setStock = new SetStockUC();
+                SetProductStockUC setStock = new SetProductStockUC();
                 setStock.ProductID = ucProduct.ID.ToString();
                 setStock.ProductName = ucProduct.Name;
                 setStock.ShowDialog();
@@ -134,6 +136,8 @@ namespace VendingMachien
             var currentBalanceValue = coin.ConvertCurrencyToInt(labelCurrentBalanceValue.Text);
             coin.SetTotalAmount(currentBalanceValue);
 
+            player.Play();
+
             MessageBox.Show(coin.Coin5.ToString() + " X 0,05" + Environment.NewLine +
                                coin.Coin10.ToString() + " X 0,10" + Environment.NewLine +
                                coin.Coin20.ToString() + " X 0,20" + Environment.NewLine +
@@ -141,7 +145,12 @@ namespace VendingMachien
                                coin.Coin100.ToString() + " X 1,00" + Environment.NewLine +
                                coin.Coin200.ToString() + " X 2,00");
 
-
+            database.ChangeCoinStockSubstract(5, coin.Coin5);
+            database.ChangeCoinStockSubstract(10, coin.Coin10);
+            database.ChangeCoinStockSubstract(20, coin.Coin20);
+            database.ChangeCoinStockSubstract(50, coin.Coin50);
+            database.ChangeCoinStockSubstract(100, coin.Coin100);
+            database.ChangeCoinStockSubstract(200, coin.Coin200);            
 
             labelCurrentBalanceValue.Text = "€ 0,00";
         }
@@ -151,6 +160,12 @@ namespace VendingMachien
             AdminPage adminpage = new AdminPage();
 
             adminpage.Show();
+        }
+
+        private void ButtonAddCoinStock_Click(object sender, EventArgs e)
+        {
+            BalanceMenu balanceMenu = new BalanceMenu(this);
+            balanceMenu.Show();
         }
     }
 

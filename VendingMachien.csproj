@@ -74,11 +74,17 @@
       <DependentUpon>ProductUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\SaleDataModel.cs" />
-    <Compile Include="SetStockUC.cs">
+    <Compile Include="SetCoinStockUC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetStockUC.Designer.cs">
-      <DependentUpon>SetStockUC.cs</DependentUpon>
+    <Compile Include="SetCoinStockUC.Designer.cs">
+      <DependentUpon>SetCoinStockUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetProductStockUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetProductStockUC.Designer.cs">
+      <DependentUpon>SetProductStockUC.cs</DependentUpon>
     </Compile>
     <Compile Include="VendingMachien.cs">
       <SubType>Form</SubType>
@@ -97,8 +103,11 @@
     <EmbeddedResource Include="ProductUC.resx">
       <DependentUpon>ProductUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetStockUC.resx">
-      <DependentUpon>SetStockUC.cs</DependentUpon>
+    <EmbeddedResource Include="SetCoinStockUC.resx">
+      <DependentUpon>SetCoinStockUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetProductStockUC.resx">
+      <DependentUpon>SetProductStockUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendingMachien.resx">
       <DependentUpon>VendingMachien.cs</DependentUpon>

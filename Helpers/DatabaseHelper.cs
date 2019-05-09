@@ -66,6 +66,16 @@ namespace VendingMachien
 
             ConnectionObject.Close();
         }
+        public void ChangeCoinStock(string coinName, int coinQuantity)
+        {
+            ConnectionObject.Open();
+
+            string productQuery = "UPDATE coin SET coinQuantity = " + coinQuantity + " WHERE coinName = " + coinName;
+            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            ConnectionObject.Close();
+        }
         public void ChangeCoinStockAdd(string coinName, int selectedCoin)
         {
             ConnectionObject.Open();
@@ -76,11 +86,11 @@ namespace VendingMachien
 
             ConnectionObject.Close();
         }
-        public void ChangeCoinStockRemove(string coinName, int selectedCoin)
+        public void ChangeCoinStockSubstract(int coinName, int coinsToSubstract)
         {
             ConnectionObject.Open();
 
-            string productQuery = "UPDATE coin SET coinQuantity = coinQuantity - " + selectedCoin + " WHERE coinName = " + coinName;
+            string productQuery = "UPDATE coin SET coinQuantity = coinQuantity - " + coinsToSubstract + " WHERE coinName = " + coinName;
             MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
             MySqlDataReader reader = command.ExecuteReader();
 
@@ -124,6 +134,22 @@ namespace VendingMachien
             ConnectionObject.Close();
 
             return salesDataList;
+        }
+
+        public int GetCoinStock(int coinName)
+        {
+            ConnectionObject.Open();
+
+            string productQuery = "SELECT coinQuantity FROM coin WHERE coinName = " + coinName;
+            MySqlCommand command = new MySqlCommand(productQuery, ConnectionObject);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+            var coinStock = reader.GetInt32("coinQuantity");
+
+            ConnectionObject.Close();
+
+            return coinStock;
         }
     }
 }

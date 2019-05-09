@@ -10,7 +10,7 @@ namespace VendingMachien
 {
     class EmailHelper
     {
-        MailMessage mail = new MailMessage("vendingmachinnathan@gmail.com", "400029712@st.roc.a12.nl");
+        MailMessage mail = new MailMessage("vendingmachinnathan@gmail.com", "nathanmortenbieslook@gmail.com");
         public void SendAlmostOutOfStockMail(int productStock, string productName)
         {
             SmtpClient client = new SmtpClient()
@@ -40,6 +40,22 @@ namespace VendingMachien
             };
             mail.Subject = productName + " is out of stock";
             mail.Body = productName + " is out of stock, go to your machine to resupply";
+            client.Send(mail);
+            client.Dispose();
+        }
+        public void SendOutOfStockMailCoin(int coinName)
+        {
+            SmtpClient client = new SmtpClient()
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential("vendingmachinenathan", "[VMN]2019")
+            };
+            mail.Subject = coinName + " is out of stock";
+            mail.Body = coinName + " is out of stock, go to your machine to resupply";
             client.Send(mail);
             client.Dispose();
         }

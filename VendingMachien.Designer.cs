@@ -38,6 +38,7 @@
             this.listBoxSoldProducts = new System.Windows.Forms.ListBox();
             this.labelTextProduct = new System.Windows.Forms.Label();
             this.buttonShowAdminPage = new System.Windows.Forms.Button();
+            this.buttonAddCoinStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -159,12 +160,28 @@
             this.buttonShowAdminPage.Visible = false;
             this.buttonShowAdminPage.Click += new System.EventHandler(this.ButtonShowAdminPage_Click);
             // 
+            // buttonAddCoinStock
+            // 
+            this.buttonAddCoinStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddCoinStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(165)))), ((int)(((byte)(216)))));
+            this.buttonAddCoinStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddCoinStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.buttonAddCoinStock.Location = new System.Drawing.Point(972, 864);
+            this.buttonAddCoinStock.Name = "buttonAddCoinStock";
+            this.buttonAddCoinStock.Size = new System.Drawing.Size(151, 48);
+            this.buttonAddCoinStock.TabIndex = 11;
+            this.buttonAddCoinStock.Text = "Add Coin Stock";
+            this.buttonAddCoinStock.UseVisualStyleBackColor = false;
+            this.buttonAddCoinStock.Visible = false;
+            this.buttonAddCoinStock.Click += new System.EventHandler(this.ButtonAddCoinStock_Click);
+            // 
             // FormVendingMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(111)))), ((int)(((byte)(164)))));
             this.ClientSize = new System.Drawing.Size(1196, 972);
+            this.Controls.Add(this.buttonAddCoinStock);
             this.Controls.Add(this.buttonShowAdminPage);
             this.Controls.Add(this.labelTextProduct);
             this.Controls.Add(this.listBoxSoldProducts);
@@ -199,6 +216,7 @@
         private System.Windows.Forms.ListBox listBoxSoldProducts;
         private System.Windows.Forms.Label labelTextProduct;
         private System.Windows.Forms.Button buttonShowAdminPage;
+        private System.Windows.Forms.Button buttonAddCoinStock;
     }
 }
 

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VendingMachien
 {
     public class CoinHelper
-
     {
+        DatabaseHelper database = new DatabaseHelper();
+        EmailHelper mail = new EmailHelper();
         public int TotalAmount { get; set; }
         public int Coin5 { get; set; }
         public int Coin10 { get; set; }
@@ -25,48 +27,55 @@ namespace VendingMachien
         public int Coin200Stock { get; set; }
 
         public void SetTotalAmount(int totalAmount)
-
         {
+            database.mySqlConnection();
+
+            Coin5Stock = database.GetCoinStock(5);
+            Coin10Stock = database.GetCoinStock(10);
+            Coin20Stock = database.GetCoinStock(20);
+            Coin50Stock = database.GetCoinStock(50);
+            Coin100Stock = database.GetCoinStock(100);
+            Coin200Stock = database.GetCoinStock(200);
 
             TotalAmount = totalAmount;
             Coin200 = totalAmount / 200;
             if (Coin200 > Coin200Stock)
             {
-                Coin200 = Coin200Stock;
-            }
+                Coin200 = Coin200Stock;                
+            }            
             totalAmount = totalAmount - (Coin200 * 200);
 
             Coin100 = totalAmount / 100;
             if (Coin100 > Coin100Stock)
             {
-                Coin100 = Coin100Stock;
-            }
+                Coin100 = Coin100Stock;            
+            }            
             totalAmount = totalAmount - (Coin100 * 100);
 
             Coin50 = totalAmount / 50;
             if (Coin50 > Coin50Stock)
-            {
+            {             
                 Coin50 = Coin50Stock;
             }
             totalAmount = totalAmount - (Coin50 * 50);
 
             Coin20 = totalAmount / 20;
             if (Coin20 > Coin20Stock)
-            {
+            {             
                 Coin20 = Coin20Stock;
             }
             totalAmount = totalAmount - (Coin20 * 20);
 
             Coin10 = totalAmount / 10;
             if (Coin10 > Coin10Stock)
-            {
+            {             
                 Coin10 = Coin10Stock;
             }
             totalAmount = totalAmount - (Coin10 * 10);
 
             Coin5 = totalAmount / 5;
             if (Coin5 > Coin5Stock)
-            {
+            {             
                 Coin5 = Coin5Stock;
             }
             totalAmount = totalAmount - (Coin5 * 5);

@@ -43,22 +43,5 @@ namespace VendingMachien
             client.Send(mail);
             client.Dispose();
         }
-        public void SendOutOfStockMailCoin(int coinName)
-        {
-            SmtpClient client = new SmtpClient()
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("vendingmachinenathan", "[VMN]2019")
-            };
-            mail.Subject = coinName + " is out of stock";
-            mail.Body = coinName + " is out of stock, go to your machine to resupply";
-            client.Send(mail);
-            client.Dispose();
-        }
-
     }
 }
